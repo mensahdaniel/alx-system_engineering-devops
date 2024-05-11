@@ -1,36 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# a Bash script that displays listening ports:
+# That only shows listening sockets
+# That shows the PID and name of the program to which each socket belongs
 
-# Function to display information for a listening port
-function show_listening_port() {
-  local protocol=$1
-  local port=$2
-  local pid=$(netstat -pnl | grep ":$port " | awk '{print $NF}')
-  if [[ -n "$pid" ]]; then
-    local process_name=$(ps -p "$pid" -o comm=)
-    echo "Protocol: $protocol, Port: $port, PID: $pid, Process: $process_name"
-  fi
-}
-
-# Loop through common TCP and UDP ports
-for port in {22,80,443}; do
-  # Check for TCP connections
-  if netstat -pnl | grep -q ":$port "; then
-    show_listening_port TCP $port
-  fi
-  # Check for UDP connections (if desired, uncomment the following line)
-  # if netstat -anl | grep -q ":$port "; then
-  #   show_listening_port UDP $port
-  # fi
-done
-
-# Loop through all ports (not recommended for large systems due to performance)
-# for port in $(seq 1 65535); do
-#   if netstat -pnl | grep -q ":$port "; then
-#     show_listening_port TCP $port
-#   fi
-#   # Check for UDP connections (if desired, uncomment the following line)
-#   # if netstat -anl | grep -q ":$port "; then
-#   #   show_listening_port UDP $port
-#   # fi
-# done
-
+netstat -l -p
