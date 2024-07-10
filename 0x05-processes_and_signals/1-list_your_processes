@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Display a list of currently running processes for all users
+# including those without a TTY, in a user-oriented format with process hierarchy
+
+# Use ps and pstree commands to achieve this
+
+echo "Currently Running Processes :"
+
+# Display processes with ps
+ps aux --forest
