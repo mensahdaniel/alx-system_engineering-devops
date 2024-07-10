@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Display lines containing the word "bash" from the list of currently running processes
+# This allows getting the PID of your Bash process easily.
+
+# shellcheck disable=SC2009
+ps aux | grep bash | grep -v grep
+
