@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Alternate between "To infinity and beyond" and "Daniel is a good boy" indefinitely with a sleep of 2 seconds between each iteration
+
+while true; do
+    echo "Daniel is a good boy"
+    echo "To infinity and beyond"
+    sleep 2
+
+    echo "To infinity and beyond"
+    echo "Daniel is a good boy"
+    sleep 2
+done
+

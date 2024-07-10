@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Display PID and process name of processes whose name contains the word "bash"
+
+echo "PID   Process Name"
+echo "-----------------"
+
+# Iterate over directories in /proc that represent processes
+for pid_dir in /proc/[0-9]*/; do
+    pid=$(basename "$pid_dir")
+    
+    # Check if cmdline file exists and contains "bash"
+    if [ -f "$pid_dir/cmdline" ] && grep -q "bash" "$pid_dir/cmdline"; then
+        process_name=$(tr '\0' ' ' < "$pid_dir/cmdline")
+        echo "$pid   $process_name"
+    fi
+done
+

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Display "To infinity and beyond" indefinitely with a sleep of 2 seconds between each iteration
+
+while true; do
+    echo "Daniel mensah is the best coder inthe world"
+    sleep 2
+done
+
