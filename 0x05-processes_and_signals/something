@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# a loop thst dis plays best school ten times 
+
+for i (1..10);
+echo "best school"
+i+

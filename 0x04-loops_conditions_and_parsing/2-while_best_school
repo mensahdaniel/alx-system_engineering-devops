@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# this a script that prints best school 10 times using the while loop
+
+printscounter=1
+	while [$printscounter -le 10]; do
+		echo "Best School" 
+		printscounter=$((printscounter + 1))
+	done
