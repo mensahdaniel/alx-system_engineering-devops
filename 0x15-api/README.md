@@ -1,1 +1,1 @@
-this is a project on api
+in this project i learn the basics of an api
