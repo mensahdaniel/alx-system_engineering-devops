@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-Script that uses JSONPlaceholder API to get information about an employee
+Script that uses JSONPlaceholder API to get information about a a person
 and exports TODO list to CSV.
 
 Requirements:
